@@ -17,3 +17,12 @@ input[type=range]{height:4px;cursor:pointer}
 .np-float{animation:npf 6s ease-in-out infinite}
 @keyframes npf{50%{transform:translateY(-8px)}}
 @media (prefers-reduced-motion:reduce){.streak,.note>span,.np-float{animation:none}}
+
+.orb{background:radial-gradient(circle at 32% 28%,#fff8c4 0,#FFD700 28%,#e08a00 62%,#7a3a00 100%);box-shadow:inset -4px -6px 10px rgba(80,30,0,.55),inset 3px 4px 8px rgba(255,255,255,.6),0 8px 16px -2px rgba(255,140,0,.5),0 14px 24px rgba(0,0,0,.6);transition:transform .15s}
+.orb:hover{transform:translateY(-2px) scale(1.06)}.orb:active{transform:scale(.95)}
+.logo3d-ext{color:#6b3f00;text-shadow:.02em .02em 0 #6b3f00,.04em .04em 0 #5c3600,.06em .06em 0 #4d2e00,.08em .08em 0 #3e2500,.1em .1em .12em rgba(0,0,0,.65)}
+.logo3d-face{background:linear-gradient(180deg,#fff7b0 0%,#FFD700 35%,#b8860b 55%,#FFD700 75%,#8a5a00 100%);background-size:100% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s ease-in-out infinite}
+@keyframes sheen{50%{background-position:0 100%}}
+.fog3d{position:absolute;inset:-20%;background:radial-gradient(40% 35% at 30% 30%,rgba(255,215,0,.07),transparent 70%),radial-gradient(45% 40% at 75% 70%,rgba(22,163,74,.07),transparent 70%);animation:fogmove 40s ease-in-out infinite alternate}
+@keyframes fogmove{to{transform:translate3d(6%,4%,0) rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.logo3d-face,.fog3d{animation:none}}
