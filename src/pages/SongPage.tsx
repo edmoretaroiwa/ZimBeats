@@ -8,6 +8,7 @@ export default function SongPage() {
   const [s, setS] = useState<Song | null>(null), [missing, setMissing] = useState(false), [msg, setMsg] = useState('')
   useEffect(() => { supabase.from('songs').select('*').eq('id', id).single()
     .then(({ data }) => data ? setS(data as Song) : setMissing(true)) }, [id])
+  useEffect(() => { if (s) document.title = `${s.title} by ${s.artist} – ZimBeats`; return () => { document.title = 'ZimBeats – Stream and download Zimbabwe music' } }, [s])
   if (missing) return <p className="text-zinc-400">Song not found.</p>
   if (!s) return <p className="text-zinc-500">Loading…</p>
   const active = p.current?.id === s.id && p.playing
