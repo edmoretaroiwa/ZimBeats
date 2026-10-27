@@ -32,7 +32,7 @@ export default function Hero3D() {
     const tick = (t: number) => { raf = requestAnimationFrame(tick); const k = t / 1000
       if (!still) discs.forEach((d, i) => { d.spin.rotation.y += 0.012 * (i % 2 ? -1 : 1); d.outer.position.y = d.y + Math.sin(k + i * 2) * 0.18 })
       scene.rotation.y += (m.x * 0.5 - scene.rotation.y) * 0.05; scene.rotation.x += (m.y * 0.3 - scene.rotation.x) * 0.05
-      dust.rotation.y = still ? 0 : k * 0.02; scene.position.y = still ? 0 : Math.min(scrollY, 700) * 0.005; renderer.render(scene, cam) }
+      dust.rotation.y = still ? 0 : k * 0.02; renderer.render(scene, cam) }
     raf = requestAnimationFrame(tick)
     return () => { cancelAnimationFrame(raf); ro.disconnect(); removeEventListener('pointermove', onMove); renderer.dispose(); renderer.domElement.remove() }
   }, [])
