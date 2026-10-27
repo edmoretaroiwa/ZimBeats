@@ -32,7 +32,7 @@ export default function NowPlayingCard({ onClose }: { onClose: () => void }) {
             <div className="flex justify-between text-xs text-zinc-500"><span>{fmt(p.pos)}</span><span>{fmt(p.dur)}</span></div>
             <div className="mt-2 flex items-center justify-center gap-6">
               <button onClick={p.prev} aria-label="Previous"><Prev c="h-7 w-7" /></button>
-              <button onClick={p.toggle} aria-label={p.playing ? 'Pause' : 'Play'} className="grid h-14 w-14 place-items-center rounded-full bg-gold text-black hover:shadow-glow">{p.playing ? <Pause c="h-7 w-7" /> : <Play c="h-7 w-7" />}</button>
+              <button onClick={p.toggle} aria-label={p.playing ? 'Pause' : 'Play'} className="grid h-14 w-14 place-items-center rounded-full orb text-black">{p.playing ? <Pause c="h-7 w-7" /> : <Play c="h-7 w-7" />}</button>
               <button onClick={p.next} aria-label="Next"><Next c="h-7 w-7" /></button></div>
             <button onClick={() => setBack(true)} className="mt-auto pt-3 text-sm text-gold">Track info</button>
           </div>

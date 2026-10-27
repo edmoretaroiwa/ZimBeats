@@ -11,7 +11,6 @@ export default function Backdrop() {
   }, [])
   return (<div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
     {streaks.map(([c, top, p]) => <div key={c} className="streak" style={v({ top: `${top}%`, background: c, '--p': p })} />)}
-    {notes.map(([n, x, y, s, p], i) => <div key={i} className="note" style={v({ left: `${x}%`, top: `${y}%`, fontSize: s, '--p': p })}>
-      <span style={{ animationDelay: `${i * 0.7}s` }}>{n}</span></div>)}
+    
   </div>)
 }
