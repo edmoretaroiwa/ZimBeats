@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { Howl } from 'howler'
 import { Song, supabase } from '../lib/supabase'
-type Ctx = { current: Song | null; playing: boolean; pos: number; dur: number; vol: number
+type Ctx = { queue: Song[]; current: Song | null; playing: boolean; pos: number; dur: number; vol: number
   play: (s: Song, q?: Song[]) => void; toggle: () => void; next: () => void; prev: () => void
   seek: (t: number) => void; setVol: (v: number) => void }
 const C = createContext<Ctx>(null as unknown as Ctx)
@@ -39,5 +39,5 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     const id = current.id
     const t = setTimeout(() => { supabase.rpc('increment_plays', { song_id: id }) }, 5000)
     return () => clearTimeout(t) }, [playing, current])
-  return <C.Provider value={{ current, playing, pos, dur, vol, play, toggle, next, prev, seek, setVol }}>{children}</C.Provider>
+  return <C.Provider value={{ queue: queue.current, current, playing, pos, dur, vol, play, toggle, next, prev, seek, setVol }}>{children}</C.Provider>
 }
