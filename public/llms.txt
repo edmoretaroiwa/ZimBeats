@@ -1,1 +1,7 @@
+# ZimBeats
 
+> ZimBeats is a Zimbabwean music site where people can stream and download songs in genres including Zimdancehall, HipHop, Afro, Sungura and Amapiano.
+
+- [Home: latest songs](https://zimbeats.ttaroiwa.workers.dev/): newest uploads, searchable by title, artist and genre
+- [Sitemap](https://zimbeats.ttaroiwa.workers.dev/sitemap.xml): every song page
+- Each song page (/song/ID) lists the title, artist, genre, play count and a free MP3 download.
